@@ -1,4 +1,4 @@
-# File created on Fri Sep 22 00:14:26 CDT 2023 by the Apache Sling Content Package to Sling Feature converter
+# File created on Sat Sep 23 20:11:51 CDT 2023 by the Apache Sling Content Package to Sling Feature converter
 # content-package path, content-package ID, content-package type, content-package parent ID, path in parent content-package, absolute path
 /Users/aadhya/workspace/ktech/all/target/ktech.all-1.0.0-SNAPSHOT.zip,com.ktech:ktech.all:1.0.0-SNAPSHOT,CONTAINER,,,
 /Users/aadhya/workspace/ktech/all/target/ktech.all-1.0.0-SNAPSHOT.zip,com.ktech:ktech.ui.apps:1.0.0-SNAPSHOT,APPLICATION,com.ktech:ktech.all:1.0.0-SNAPSHOT,/jcr_root/apps/ktech-packages/application/install/ktech.ui.apps-1.0.0-SNAPSHOT.zip,/Users/aadhya/workspace/ktech/all/target/ktech.all-1.0.0-SNAPSHOT.zip!/jcr_root/apps/ktech-packages/application/install/ktech.ui.apps-1.0.0-SNAPSHOT.zip
