@@ -1,0 +1,107 @@
+{
+  "id":"com.ktech:ktech.all:slingosgifeature:user-aggregated-publish:1.0.0-SNAPSHOT",
+  "bundles":[
+    {
+      "id":"com.ktech:ktech.core:1.0.0-SNAPSHOT",
+      "feature-origins":"com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT",
+      "Bundle-SymbolicName":"ktech.core",
+      "Bundle-Version":"1.0.0.SNAPSHOT",
+      "start-order":"20",
+      "content-package-origins":"com.ktech:ktech.all:1.0.0-SNAPSHOT"
+    }
+  ],
+  "configurations":  {
+    "org.apache.sling.commons.log.LogManager.factory.config~ktech":    {
+      ":configurator:content-package-origins":"com.ktech:ktech.all:1.0.0-SNAPSHOT|com.ktech:ktech.ui.config:1.0.0-SNAPSHOT",
+      "org.apache.sling.commons.log.names":[
+        "com.ktech"
+      ],
+      "org.apache.sling.commons.log.level":"INFO",
+      "org.apache.sling.commons.log.file":"logs/error.log",
+      "org.apache.sling.commons.log.additiv":"false",
+      ":configurator:feature-origins-org.apache.sling.commons.log.names":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.file":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.level":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.additiv":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ]
+    },
+    "com.adobe.cq.wcm.core.components.internal.servlets.TableOfContentsFilter~ktech":    {
+      ":configurator:content-package-origins":"com.ktech:ktech.all:1.0.0-SNAPSHOT|com.ktech:ktech.ui.config:1.0.0-SNAPSHOT",
+      "enabled":"true",
+      ":configurator:feature-origins-enabled":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ]
+    },
+    "org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl":    {
+      ":configurator:content-package-origins":"com.ktech:ktech.all:1.0.0-SNAPSHOT|com.ktech:ktech.ui.config:1.0.0-SNAPSHOT",
+      "resource.resolver.mapping":[
+        "/content/ktech/</",
+        "/:/"
+      ],
+      ":configurator:feature-origins-resource.resolver.mapping":[
+        "com.ktech:ktech.all:slingosgifeature:publish:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "com.ktech:ktech.all:slingosgifeature:publish:1.0.0-SNAPSHOT"
+      ]
+    }
+  },
+  "assembled-features:ARTIFACTS|TRANSIENT":[
+    "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT",
+    "com.ktech:ktech.all:slingosgifeature:publish:1.0.0-SNAPSHOT"
+  ],
+  "content-packages:ARTIFACTS|true":[
+    {
+      "id":"com.ktech:ktech.ui.apps:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+      "feature-origins":"com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+    },
+    {
+      "id":"com.ktech:ktech.ui.config:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+      "feature-origins":"com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+    },
+    {
+      "id":"com.ktech:ktech.all:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+      "feature-origins":"com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+    }
+  ],
+  "repoinit:TEXT|true":[
+    "# origin=com.ktech:ktech.all:1.0.0-SNAPSHOT|com.ktech:ktech.ui.config:1.0.0-SNAPSHOT source=org.apache.sling.jcr.repoinit.RepositoryInitializer~ktech",
+    "create path (sling:OrderedFolder) /content/dam/ktech",
+    "create path (nt:unstructured) /content/dam/ktech/jcr:content",
+    "set properties on /content/dam/ktech/jcr:content",
+    "  set cq:conf{String} to /conf/ktech",
+    "  set jcr:title{String} to \"K-Tech\"",
+    "end"
+  ],
+  "api-regions:JSON|false":[
+    {
+      "name":"global",
+      "exports":[
+        "com.ktech.core.filters",
+        "com.ktech.core.listeners",
+        "com.ktech.core.models",
+        "com.ktech.core.schedulers",
+        "com.ktech.core.servlets"
+      ],
+      "feature-origins":[
+        "com.ktech:ktech.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ]
+    }
+  ],
+  "artifact-rules:JSON|false":{
+
+  }
+}

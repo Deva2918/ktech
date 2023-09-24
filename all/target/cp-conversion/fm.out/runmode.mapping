@@ -1,0 +1,5 @@
+#File edited by the Apache Sling Content Package to Sling Feature converter
+#Fri Sep 22 00:14:26 CDT 2023
+(default)=ktech.all.json
+author=ktech.all-author.json
+publish=ktech.all-publish.json

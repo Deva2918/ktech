@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/ktech/clientlibs"/>
+    <filter root="/apps/ktech/components"/>
+    <filter root="/apps/ktech/i18n"/>
+</workspaceFilter>
