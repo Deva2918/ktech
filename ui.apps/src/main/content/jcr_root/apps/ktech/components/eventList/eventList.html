@@ -1,2 +1,24 @@
-<sly data-sly-use.model="com.ktech.core.models.HelloWorldModel"/>
-<h1> event list component ${model.message}</h1>
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
+    data-sly-call="${clientlib.css @ categories='ktech.eventList'}"></sly>
+<sly data-sly-use.model="com.ktech.core.models.EventListModel" />
+
+<div class="component-container">
+    <div class="header-section aem-Grid aem-Grid--12">
+        <div class="header aem-GridColumn aem-GridColumn--default--8">${model.header}</div>
+        <div class="search aem-GridColumn aem-GridColumn--default--4">
+            <input type="text" title="search">
+        </div>
+    </div>
+    <div class="pages-section aem-Grid aem-Grid--12">
+        <sly data-sly-list="${model.pageList}">
+            <button class="eventTitleButton">${item.title}</button>
+            <div class="eventDetailsSection">
+                <p>Event Start Date: ${item.eventStartDate}</p>
+                <p>Event End Date: ${item.eventEndDate}</p>
+                <p>Event Location: ${item.eventLocation}</p>
+            </div>
+        </sly>
+    </div>
+</div>
+
+<sly data-sly-call="${clientlib.js @ categories='ktech.eventList'}" />

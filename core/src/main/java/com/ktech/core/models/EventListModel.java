@@ -27,10 +27,10 @@ public class EventListModel {
     @Inject
     private Page currentPage;
     @ValueMapValue
-    private String text;
+    private String header;
 
-    public String getText() {
-        return text;
+    public String getHeader() {
+        return header;
     }
     List<EventPagesList> pageList;
     public List<EventPagesList> getPageList() {
